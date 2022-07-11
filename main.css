@@ -293,6 +293,7 @@ input {
 .start-button {
     left: 2vw;
     width: 29vw;
+    bottom: 10vh;
 }
 
 /* questions */
