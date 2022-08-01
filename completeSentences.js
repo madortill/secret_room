@@ -24,7 +24,7 @@ const addContentToSentence = () => {
     let check =  El("div", {classes: [`checkButtonSentence`, `horizon-center`]}, "בדיקה");
     document.querySelector(`.completeSentenceContainer`).append(check);
 
-    let counter = El("div", {cls: `counter`}, `תשובות נכונות: ${correctAns}`);
+    let counter = El("div", {cls: `counter`}, `תשובות נכונות: ${correctAns}/${DATA.questions.length + DATA.completeSentence.length}`);
     document.querySelector(`.completeSentenceContainer`).append(counter);
 }
 
@@ -63,7 +63,7 @@ const checkAnswer = () => {
         document.querySelector(`.dropDownTitle`).style.backgroundImage = "url(assets/media/right_button.svg)";   
         correctAns++;
         console.log(correctAns);
-        document.querySelector(".completeSentenceContainer .counter").innerHTML = `תשובות נכונות: ${correctAns}`;
+        document.querySelector(".completeSentenceContainer .counter").innerHTML = `תשובות נכונות: ${correctAns}/${DATA.questions.length + DATA.completeSentence.length}`;
     } else {
         console.log("תשובה לא נכונה");   
         document.querySelector(`.dropDownTitle`).style.backgroundImage = "url(assets/media/wrong_button.svg)"; 

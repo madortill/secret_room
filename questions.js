@@ -29,7 +29,7 @@ const addContentToQuestion = () => {
         document.querySelector(`.multipleQuestionContainer`).append(ansContainer);
     }
 
-    let counter = El("div", {cls: `counter`}, `תשובות נכונות: ${correctAns}`);
+    let counter = El("div", {cls: `counter`}, `תשובות נכונות: ${correctAns}/${DATA.questions.length + DATA.completeSentence.length}`);
     document.querySelector(`.multipleQuestionContainer`).append(counter);
 }
 
@@ -46,7 +46,7 @@ const onClickAnswer = (event) => {
     // check if answer is correct
     if(event.currentTarget.classList[1] === String(arrMultipleQuestions[nMultipleCurrentQuestion].correctAns)){
         correctAns++;
-        document.querySelector(".multipleQuestionContainer .counter").innerHTML = `תשובות נכונות: ${correctAns}`;
+        document.querySelector(".multipleQuestionContainer .counter").innerHTML = `תשובות נכונות: ${correctAns}/${DATA.questions.length + DATA.completeSentence.length}`;
     } else {
         console.log("לא נכון");
         event.currentTarget.style.backgroundImage = "url(assets/media/wrong_button.svg)";
